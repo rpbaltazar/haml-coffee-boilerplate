@@ -25,7 +25,7 @@ This boilerplate assumes that there are a couple of things available in your mac
 
 ## NPM
 
-The base of this boilerplate is npm. [https://www.npmjs.com/](NPM) is the package manager for javascript.
+The base of this boilerplate is npm. [NPM](https://www.npmjs.com/) is the package manager for javascript.
 I'm using this package manager to get all the development dependencies installed properly (more on the dev dependencies later).
 
 To check if you have npm installed in your machine you can simply open the terminal and type:
@@ -35,8 +35,8 @@ rpbaltazar$ npm -v
 2.1.18
 ```
 
-In case you don't have npm installed, please take a look at [https://docs.npmjs.com/getting-started/installing-node](NPM's page) and follow their instructions
-or if you have [http://brew.sh/](homebrew) you can simply type
+In case you don't have npm installed, please take a look at [NPM's page](https://docs.npmjs.com/getting-started/installing-node) and follow their instructions
+or if you have [homebrew](http://brew.sh/) you can simply type
 
 ```
 rpbaltazar$ brew install node
