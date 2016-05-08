@@ -1,17 +1,17 @@
 module.exports = (grunt) ->
   grunt.initConfig
     coffee:
-      coffee_to_js:
+      dist:
         expand: true
         flatten: false
-        cwd: "./js"
+        cwd: "src/js"
         src: ["**/*.coffee"]
-        dest: '../js'
+        dest: 'build/js'
         ext: ".js"
     haml:
       dist:
         files:
-          '../index.html': 'index.haml'
+          'build/index.html': 'src/index.haml'
 
     copy:
       main:
@@ -35,7 +35,7 @@ module.exports = (grunt) ->
       server:
         options:
           port: 8000
-          base: '../'
+          base: 'build'
 
   #Load Tasks
   grunt.loadNpmTasks 'grunt-contrib-copy'
