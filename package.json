@@ -29,7 +29,9 @@
     "grunt-contrib-coffee": "^1.0.0",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jasmine": "^1.0.3",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-haml2html": "^0.3.0"
+    "grunt-haml2html": "^0.3.0",
+    "jasmine-jquery": "^2.1.1"
   }
 }

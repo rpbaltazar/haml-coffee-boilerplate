@@ -8,6 +8,14 @@ module.exports = (grunt) ->
         src: ["**/*.coffee"]
         dest: 'build/js'
         ext: ".js"
+      spec:
+        expand: true
+        flatten: false
+        cwd: 'spec/js'
+        src: ["**/*.coffee"]
+        dest: 'build/js'
+        ext: '.js'
+
     haml:
       dist:
         files:
@@ -19,6 +27,19 @@ module.exports = (grunt) ->
         cwd: ''
         src: ['./css/*', './img/*']
         dest: '../'
+      spec:
+        files:
+          'build/js/lib/jasmine-jquery.js': 'node_modules/jasmine-jquery/lib/jasmine-jquery.js'
+
+    jasmine:
+      spec:
+        src: 'build/**/main.js'
+        options:
+          specs: 'build/js/**/*-spec.js'
+          vendor: [
+            'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js'
+            'build/js/lib/jasmine-jquery.js'
+          ]
 
     watch:
       coffee:
@@ -43,6 +64,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-haml2html'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-connect'
+  grunt.loadNpmTasks('grunt-contrib-jasmine')
 
   grunt.registerTask 'compile', ['coffee', 'haml', 'copy']
+  grunt.registerTask 'test', ['coffee', 'haml', 'copy:spec', 'jasmine']
   grunt.registerTask 'server', ['connect:server', 'watch']
